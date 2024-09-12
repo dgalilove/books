@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Book Shop</title>
-	</head>
-	<body onload="onInIt()">
+  <head>
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="onInIt()">
     <button onclick="onAddBook()">Add Book</button>
-		<table>
+    <table>
       <thead>
         <tr>
-					<th>Title</th>
-					<th>Price</th>
-					<th>Actions</th>
-				</tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
       </thead>
-			<tbody>
-			</tbody>
-		</table>
+      <tbody>
+      </tbody>
+    </table>
+    <div class="modal">
+      <span class="close" onclick="closeModal()"></span>
+      <img class="modal-content">
+    </div>
     <script src="services/util.service.js"></script>
     <script src="services/book.service.js"></script>
     <script src="book.controller.js"></script>
-	</body>
+  </body>
 </html>

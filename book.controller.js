@@ -38,3 +38,6 @@ function onAddBook(){
 	renderBooks()
 }
 
+function onReadBook(bookId){
+	readBook(bookId)
+}
