@@ -21,3 +21,15 @@ const gBooks = [
 function getBooks(){
   return gBooks
 }
+
+function removeBook(bookId){
+  const bookIdx = gBooks.findIndex(book => book.id === bookId)
+    if (bookIdx !==-1){
+      gBooks.splice(bookIdx,1)
+    }
+}
+
+function updatePrice(bookId){
+  const book = gBooks.find(book => book.id === bookId)
+  book.price = +prompt('Update the price')
+}

@@ -13,12 +13,22 @@ function renderBooks() {
               <td>${book.title}</td>
               <td>${book.price}</td>
               <td>
-							<button>Read</button>
-      				<button>Update</button>
-      				<button>Delete</button></td>
+							<button onclick="onRemoveBook('${book.id}')">Read</button>
+      				<button onclick="onUpdateBook('${book.id}')">Update</button>
+      				<button onclick="onRemoveBook('${book.id}')">Delete</button></td>
             </tr>
     `
 	})
 	var elBooks = document.querySelector("tbody")
 	elBooks.innerHTML = strHTML
+}
+
+function onRemoveBook(bookId){
+	removeBook(bookId)
+	renderBooks()
+}
+
+function onUpdateBook(bookId){
+	updatePrice(bookId)
+	renderBooks()
 }
