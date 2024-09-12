@@ -6,7 +6,7 @@ const gBooks = [
 		imgUrl: "lori-ipsi.jpg",
 	},
 	{
-		id: "bh265",
+		id: "bh2653",
 		title: "Narnia",
 		price: 150,
 		imgUrl: "lori-ipsi.jpg",
@@ -32,4 +32,16 @@ function removeBook(bookId){
 function updatePrice(bookId){
   const book = gBooks.find(book => book.id === bookId)
   book.price = +prompt('Update the price')
+}
+
+function addBook(){
+  const title = prompt('Enter the title of the book')
+  const price = prompt('Enter the price of the book')
+  var book = {
+    id: makeId(),
+    title : title,
+    price : price,
+    imgUrl: `${title}.jpg`
+  }
+  gBooks.unshift(book)
 }
