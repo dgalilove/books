@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body onload="onInIt()">
+    <div>
+      <input type="text" placeholder="Search for a book" oninput="onFilterBooks(this.value)">
+      <button onclick="clearSearch()">Clear</button>
+    </div>
     <button onclick="onAddBook()">Add Book</button>
     <table>
       <thead>
