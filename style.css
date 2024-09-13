@@ -1,24 +1,148 @@
-.book-details{
-  display: flex;
-  background-color: whitesmoke;
-  justify-content: center;
+/* General page styling */
+html, body {
+  height: 100%; /* Ensures the body and html are 100% height */
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(255, 234, 197);
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: rgb(255, 219, 181);
+}
+
+th, td {
+  padding: 30px;
+  text-align: center;
+  border: none;
+}
+
+th {
+  background-color: rgb(108, 78, 49);
+  color: rgb(255, 234, 197);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+td {
+  border-bottom: 1px solid rgb(96, 63, 38);
+}
+
+tr {
+  transition: 0.6s;
+}
+
+tr:hover {
+  background-color: rgba(108, 78, 49, 0.2);
+}
+
+button {
+  padding: 10px 23px;
+  background-color: rgb(108, 78, 49);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+button:hover {
+  background-color: rgb(96, 63, 38);
+}
+
+.success {
+  display: none;
+  background-color: rgb(108, 78, 49);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 200px;
+  padding-top: 20%;
+  padding-left: 30%;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.184);
+  background-color: rgba(0, 0, 0, 0.188);
 }
 
 .modal-content {
-  margin: 0 auto;
-  display: flex;
-  width: 20%;
-  max-width: 200px;
+  width: 40%;
+  background-color: rgb(255, 219, 181);
+  border-radius: 15px;
+  box-shadow: 0px 0px 100px rgb(0, 0, 0);
 }
 
+footer.stats {
+  background-color: rgb(108, 78, 49);
+  text-align: center;
+  font-size: 16px;
+  color: rgb(255, 234, 197);
+  margin-top: auto;
+}
+
+footer.stats p span {
+  font-weight: bold;
+  color: rgb(255, 219, 181);
+}
+
+button.add-book {
+  display: inline;
+  background-color: rgb(108, 78, 49);
+  margin-top: 10px;
+  margin-left: 15px;
+  padding: 12px 25px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+}
+
+button.add-book:hover {
+  background-color: rgb(96, 63, 38);
+}
+
+input {
+  display: inline;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 70%;
+  border: 2px solid rgb(108, 78, 49);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button.clear-search {
+  padding: 12px 25px;
+  background-color: rgb(108, 78, 49);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.clear-search:hover {
+  background-color: rgb(96, 63, 38);
+}

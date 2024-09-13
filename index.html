@@ -5,11 +5,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body onload="onInIt()">
-    <div>
-      <input type="text" placeholder="Search for a book" oninput="onFilterBooks(this.value)">
-      <button onclick="clearSearch()">Clear</button>
+    <div class="search-container">
+        <input type="text" placeholder="Search for a book" oninput="onFilterBooks(this.value)">
+        <button class="clear-search" onclick="clearSearch()">Clear</button>
+      <button class="add-book" onclick="onAddBook()">Add Book</button>
     </div>
-    <button onclick="onAddBook()">Add Book</button>
+
+    <div class="success"></div>
+
     <table>
       <thead>
         <tr>
@@ -21,10 +24,18 @@
       <tbody>
       </tbody>
     </table>
+    
     <div class="modal">
       <span class="close" onclick="closeModal()"></span>
       <img class="modal-content">
     </div>
+    
+    <footer class="stats">
+      <p>Expensive Books: <span class="expensive">0</span></p>
+      <p>Average Books: <span class="average">0</span></p>
+      <p>Cheap Books: <span class="cheap">0</span></p>
+    </footer>    
+
     <script src="services/util.service.js"></script>
     <script src="services/storage.service.js"></script>
     <script src="services/book.service.js"></script>

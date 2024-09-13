@@ -32,9 +32,15 @@ function updatePrice(bookId) { // updating price
 
 function addBook() { // adding book
 	const title = prompt("Enter the title of the book")
-	const price = prompt("Enter the price of the book")
-	const book = { id: makeId(), title, price, imgUrl: `img/${title}.jpg` }
-	gBooks.unshift(book)
+	const price = +prompt("Enter the price of the book")
+  if (!title || price <= 0 ) {
+    return false
+  }
+  else{
+    const book = { id: makeId(), title, price, imgUrl: `img/${title}.jpg` }
+    gBooks.unshift(book)
+    return true
+  }
 }
 
 function readBook(bookId) { // if id is matching open the modal , show the picture and on click close
@@ -75,4 +81,24 @@ function filterBooks(input) { //filter by the title
 function clearSearch() {
 	document.querySelector("input").value = "" // clearing the input 
 	renderBooks(gBooks) // rendering the books 
+}
+
+function message(msg) {
+  const elMessage = document.querySelector('.success')
+  elMessage.style.display = 'block'
+  elMessage.innerText = msg
+
+  setTimeout(() => {
+    elMessage.style.display = 'none'
+  }, 2000)
+}
+
+function stats() {
+  const expCount = gBooks.filter(book => book.price > 200).length
+  const avgCount = gBooks.filter(book => book.price >= 80 && book.price <= 200).length
+  const lowCount = gBooks.filter(book => book.price < 80).length
+
+  document.querySelector('.expensive').innerText = expCount
+  document.querySelector('.average').innerText = avgCount
+  document.querySelector('.cheap').innerText = lowCount
 }
