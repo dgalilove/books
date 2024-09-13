@@ -1,12 +1,13 @@
+"use strict"
 
-
-function onInIt(){
-	renderBooks()
+function onInIt() {
+  _loadBooks()  
+  renderBooks() 
 }
 
 function renderBooks() {
 	const books = getBooks()
-	var strHTML = ''
+	var strHTML = ""
 	books.map((book) => {
 		strHTML += `
             <tr>
@@ -23,21 +24,24 @@ function renderBooks() {
 	elBooks.innerHTML = strHTML
 }
 
-function onRemoveBook(bookId){
+function onRemoveBook(bookId) {
 	removeBook(bookId)
+	_saveBooks()
 	renderBooks()
 }
 
-function onUpdateBook(bookId){
+function onUpdateBook(bookId) {
 	updatePrice(bookId)
+	_saveBooks()
 	renderBooks()
 }
 
-function onAddBook(){
+function onAddBook() {
 	addBook()
+	_saveBooks()
 	renderBooks()
 }
 
-function onReadBook(bookId){
+function onReadBook(bookId) {
 	readBook(bookId)
 }
